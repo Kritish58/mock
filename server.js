@@ -20,8 +20,8 @@ app.get('/items', (req, res) => {
 
 //* labelId = 2
 app.get('/labels', (req, res) => {
-   const { labelId } = req.query;
-   return res.status(200).json(db.items.filter((item) => item.labelId.toString() === labelId));
+   const { catId } = req.query;
+   return res.status(200).json(db.labels.filter((label) => item.catId.toString() === catId));
 });
 
 app.put('/items/:itemId', (req, res) => {});
