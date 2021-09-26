@@ -15,7 +15,7 @@ app.get('/categories', (req, res) => {
 //* ?catId = 2
 app.get('/items', (req, res) => {
    const { catId } = req.query;
-   return res.status(200).json(db.items.filter((item) => item.catId.toString() === catId));
+   return res.status(200).json(db.items.filter((item) => item.catId == catId));
 });
 
 //* catId = 2
