@@ -28,14 +28,16 @@ app.put('/items/:itemId', (req, res) => {
    const { type } = req.query; //* type = "bookmark" or "favorite"
    const { itemId } = req.params;
    db.items = db.items.map((item) => {
-      if (item.id.toString() === itemId) {
+      if (item.id == itemId) {
          let obj = item;
          if (type === 'bookmark') {
             obj.isBookmarked = !obj.isBookmarked;
          } else {
             obj.isFavorite = !obj.isFavorite;
          }
+         return obj;
       }
+      return item;
    });
    return res.status(200).json(db.items);
 });
