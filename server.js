@@ -21,7 +21,7 @@ app.get('/items', (req, res) => {
 //* catId = 2
 app.get('/labels', (req, res) => {
    const { catId } = req.query;
-   return res.status(200).json(db.labels.filter((label) => label.catId.toString() === catId));
+   return res.status(200).json(db.labels.filter((label) => label.catId == catId));
 });
 
 app.put('/items/:itemId', (req, res) => {
