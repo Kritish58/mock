@@ -18,10 +18,10 @@ app.get('/items', (req, res) => {
    return res.status(200).json(db.items.filter((item) => item.catId.toString() === catId));
 });
 
-//* labelId = 2
+//* catId = 2
 app.get('/labels', (req, res) => {
    const { catId } = req.query;
-   return res.status(200).json(db.labels.filter((label) => item.catId.toString() === catId));
+   return res.status(200).json(db.labels.filter((label) => label.catId.toString() === catId));
 });
 
 app.put('/items/:itemId', (req, res) => {
