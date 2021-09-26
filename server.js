@@ -41,7 +41,7 @@ app.put('/items/:itemId', (req, res) => {
 });
 
 app.delete('/items/:itemId', (req, res) => {
-   db.items = db.items.filter((item) => item.id.toString() !== req.params.itemId);
+   db.items = db.items.filter((item) => item.id != req.params.itemId);
    return res.status(200).json(db.items);
 });
 
